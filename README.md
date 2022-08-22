@@ -1,3 +1,5 @@
+Criação de um e-commerce mobile baseado no layout disponível em https://www.behance.net/gallery/142322031/App-Indoor-Plants-Store
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
