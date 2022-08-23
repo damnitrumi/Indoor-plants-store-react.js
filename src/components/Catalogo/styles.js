@@ -17,6 +17,8 @@ export const Container = styled.div`
     flex-direction: column;
     transition: transform 0.5s;
     transform: translateX(-100%);
+    position: absolute;
+    width: 360px;
     ${visible &&
     css`
       transform: translateX(0);
@@ -26,8 +28,6 @@ export const Container = styled.div`
       display: flex;
       flex-direction: column;
     }
-    position: absolute;
-    width: 360px;
   `}
 `;
 

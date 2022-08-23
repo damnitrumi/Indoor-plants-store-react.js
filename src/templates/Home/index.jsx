@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Catalogo } from "../../components/Catalogo";
+// import { Catalogo } from "../../components/Catalogo";
 import { Loading } from "../../components/Loading";
-import { About } from "../../components/About";
+// import { About } from "../../components/About";
+import { Cart } from "../../components/Cart";
 
 export const Home = () => {
   const [teste, setTeste] = useState([]);
@@ -25,9 +26,10 @@ export const Home = () => {
   }
 
   return (
-    <>
-      <Catalogo />
-      <About />
-    </>
+    // <>
+    //   <Catalogo />
+    //   <About />
+    // </>
+    <Cart />
   );
 };
