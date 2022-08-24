@@ -19,7 +19,7 @@ export const LayoutContextProvider = ({ children }) => {
 
   return (
     <Context.Provider
-      value={[showCart, showCatalog, cartVisible, catalogVisible]}
+      value={[showCatalog, catalogVisible, showCart, cartVisible]}
     >
       {children}
     </Context.Provider>

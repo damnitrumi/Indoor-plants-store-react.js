@@ -8,7 +8,7 @@ import { useLayoutContext } from "../contexts/LayoutContext";
 export const Menu = ({ dark = false }) => {
   const darkIcons = dark ? "dark" : "light";
 
-  const [, , , catalogVisible] = useLayoutContext();
+  const [, catalogVisible, , cartVisible] = useLayoutContext();
 
   return (
     <Styled.Container>
@@ -19,7 +19,7 @@ export const Menu = ({ dark = false }) => {
         {" "}
         <ImageContainer urlImg={`/assets/images/short-logo-${darkIcons}.png`} />
       </Button>
-      <Button onClick={() => console.log("Teste3")}>
+      <Button onClick={cartVisible}>
         {" "}
         <ImageContainer urlImg={`/assets/images/cart-${darkIcons}.png`} />
       </Button>

@@ -1,33 +1,16 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  ${() => css`
+  ${({ visible }) => css`
+    height: 100vh;
+    transition: transform 0.5s;
+    transform: translateX(100%);
+    position: absolute;
+    top: 0;
     width: 360px;
+    ${visible &&
+    css`
+      transform: translateX(0);
+    `}
   `}
-`;
-
-export const ProductContainer = styled.div`
-  ${() => css``}
-`;
-
-export const ProductImageContainer = styled.div`
-  ${() => css``}
-`;
-export const ProductData = styled.div`
-  ${() => css``}
-`;
-
-export const NameContainer = styled.div`
-  ${() => css`
-    display: flex;
-    justify-content: space-between;
-  `}
-`;
-
-export const ProductOptionsContainer = styled.div`
-  ${() => css``}
-`;
-
-export const QuantityContainer = styled.div`
-  ${() => css``}
 `;

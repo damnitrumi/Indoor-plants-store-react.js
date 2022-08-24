@@ -69,7 +69,7 @@ const plants = [
 export const Catalogo = () => {
   const [current, setCurrent] = useState(0);
 
-  const [, showCatalog] = useLayoutContext();
+  const [showCatalog] = useLayoutContext();
   return (
     <Styled.Container visible={showCatalog}>
       <SectionWrapper>

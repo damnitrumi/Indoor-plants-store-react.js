@@ -18,6 +18,7 @@ export const Container = styled.div`
     transition: transform 0.5s;
     transform: translateX(-100%);
     position: absolute;
+    top: 0;
     width: 360px;
     ${visible &&
     css`

@@ -1,31 +1,20 @@
 import { SectionWrapper } from "../SectionWrapper";
 import { Menu } from "../Menu";
-import { Heading } from "../Heading";
-import { ImageContainer } from "../ImageContainer";
 
 import * as Styled from "./styles";
 
-import plantsMock from "../utils/plantsMock";
+import { CartItem } from "../CartItem";
+import { useLayoutContext } from "../contexts/LayoutContext";
 
 export const Cart = () => {
+  const [, , showCart] = useLayoutContext();
   return (
-    <Styled.Container>
+    <Styled.Container visible={showCart}>
       <SectionWrapper>
         <Menu dark />
-        <Styled.ProductContainer>
-          <Styled.ProductImageContainer>
-            <ImageContainer urlImg={plantsMock[0].image} />
-          </Styled.ProductImageContainer>
-          <Styled.ProductData>
-            <Styled.NameContainer>
-              <Heading>Name</Heading>
-              <Heading>Price</Heading>
-            </Styled.NameContainer>
-            <Styled.ProductOptionsContainer>
-              <Styled.QuantityContainer></Styled.QuantityContainer>
-            </Styled.ProductOptionsContainer>
-          </Styled.ProductData>
-        </Styled.ProductContainer>
+        <CartItem />
+        <CartItem />
+        <CartItem />
       </SectionWrapper>
     </Styled.Container>
   );
