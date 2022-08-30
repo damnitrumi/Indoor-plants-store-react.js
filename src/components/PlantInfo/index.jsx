@@ -39,7 +39,9 @@ export const PlantInfo = () => {
           {tab == 3 && <Text>Teste 3</Text>}
         </Styled.Tab>
       </Styled.TabsWrapper>
-      <Button onClick={() => console.log("teste")}>Add To Cart</Button>
+      <Button onClick={() => console.log("Add to cart btn")}>
+        Add To Cart
+      </Button>
     </Styled.Container>
   );
 };

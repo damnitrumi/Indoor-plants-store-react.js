@@ -10,16 +10,49 @@ export const LayoutContextProvider = ({ children }) => {
   const [showCatalog, setShowCatalog] = useState(false);
 
   const cartVisible = () => {
+    // showCatalog ? catalogVisible() : "";
+    // setShowCart((c) => !c);
+
+    if (showCatalog) {
+      catalogVisible();
+      setTimeout(() => {
+        setShowCart((c) => !c);
+      }, 500);
+      return;
+    }
+
     setShowCart((c) => !c);
   };
 
   const catalogVisible = () => {
+    // showCart ? cartVisible() : "";
+    // setShowCatalog((c) => !c);
+
+    if (showCart) {
+      cartVisible();
+      setTimeout(() => {
+        setShowCatalog((c) => !c);
+      }, 500);
+      return;
+    }
+
     setShowCatalog((c) => !c);
+  };
+
+  const bothInvisible = () => {
+    showCatalog ? catalogVisible() : "";
+    showCart ? cartVisible() : "";
   };
 
   return (
     <Context.Provider
-      value={[showCatalog, catalogVisible, showCart, cartVisible]}
+      value={[
+        showCatalog,
+        catalogVisible,
+        showCart,
+        cartVisible,
+        bothInvisible,
+      ]}
     >
       {children}
     </Context.Provider>
