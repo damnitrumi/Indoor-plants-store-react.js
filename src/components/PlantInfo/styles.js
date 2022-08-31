@@ -19,7 +19,7 @@ export const Container = styled.div`
     ${Heading} {
       color: white;
       margin-bottom: 0;
-      font-size: ${theme.font.sizes.large};
+      font-size: ${theme.font.sizes.small};
     }
     > ${Button} {
       text-align: center;

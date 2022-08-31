@@ -4,15 +4,19 @@ import { Button } from "../Button";
 import { Text } from "../Text";
 import { useState } from "react";
 
-export const PlantInfo = () => {
+import P from "prop-types";
+
+export const PlantInfo = ({
+  plant: { name, price, details, reviews, about },
+}) => {
   const [tab, setTab] = useState(1);
   const activeTab = (i) => setTab(i);
 
   return (
     <Styled.Container>
       <Styled.NameContainer>
-        <Heading>Teste</Heading>
-        <Heading>Teste</Heading>
+        <Heading>{name}</Heading>
+        <Heading>{price}</Heading>
       </Styled.NameContainer>
       <Styled.TabsWrapper>
         <Styled.TabsContainer>
@@ -27,16 +31,9 @@ export const PlantInfo = () => {
           </Styled.PlantBtn>
         </Styled.TabsContainer>
         <Styled.Tab>
-          {tab == 1 && (
-            <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              similique eius quidem nobis voluptatibus placeat quae aliquam
-              doloribus sit reiciendis beatae, odit commodi inventore eos
-              delectus, eaque nihil sed facere.
-            </Text>
-          )}
-          {tab == 2 && <Text>Teste 2</Text>}
-          {tab == 3 && <Text>Teste 3</Text>}
+          {tab == 1 && <Text>{details}</Text>}
+          {tab == 2 && <Text>{reviews}</Text>}
+          {tab == 3 && <Text>{about}</Text>}
         </Styled.Tab>
       </Styled.TabsWrapper>
       <Button onClick={() => console.log("Add to cart btn")}>
@@ -44,4 +41,16 @@ export const PlantInfo = () => {
       </Button>
     </Styled.Container>
   );
+};
+
+PlantInfo.propTypes = {
+  plant: P.shape({
+    name: P.string,
+    price: P.string,
+    details: P.string,
+    reviews: P.string,
+    about: P.string,
+    image: P.string,
+    quantity: P.number,
+  }).isRequired,
 };
