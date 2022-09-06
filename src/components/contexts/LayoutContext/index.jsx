@@ -10,9 +10,6 @@ export const LayoutContextProvider = ({ children }) => {
   const [showCatalog, setShowCatalog] = useState(false);
 
   const cartVisible = () => {
-    // showCatalog ? catalogVisible() : "";
-    // setShowCart((c) => !c);
-
     if (showCatalog) {
       catalogVisible();
       setTimeout(() => {
@@ -25,9 +22,6 @@ export const LayoutContextProvider = ({ children }) => {
   };
 
   const catalogVisible = () => {
-    // showCart ? cartVisible() : "";
-    // setShowCatalog((c) => !c);
-
     if (showCart) {
       cartVisible();
       setTimeout(() => {

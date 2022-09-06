@@ -1,4 +1,5 @@
 import * as Styled from "./styles";
+import P from "prop-types";
 import Slider from "react-touch-drag-slider";
 import { useState } from "react";
 import { SectionWrapper } from "../SectionWrapper";
@@ -8,65 +9,7 @@ import { PlantInfo } from "../PlantInfo";
 import { Dots } from "../Dots";
 import { useLayoutContext } from "../contexts/LayoutContext";
 
-const plants = [
-  {
-    name: "Cacto Plant 1",
-    price: "R$ 21.00",
-    details: "Cactus are succulent perennial plants 1",
-    reviews:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 1",
-    about:
-      "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 1",
-    image: "/assets/images/plant.png",
-    quantity: 0,
-  },
-  {
-    name: "Cacto Plant 2",
-    price: "R$ 22.00",
-    details: "Cactus are succulent perennial plants 2",
-    reviews:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 2",
-    about:
-      "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 2",
-    image: "/assets/images/plant.png",
-    quantity: 0,
-  },
-  {
-    name: "Cacto Plant 3",
-    price: "R$ 23.00",
-    details: "Cactus are succulent perennial plants 3",
-    reviews:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 3",
-    about:
-      "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 3",
-    image: "/assets/images/plant.png",
-    quantity: 0,
-  },
-  {
-    name: "Cacto Plant 4",
-    price: "R$ 24.00",
-    details: "Cactus are succulent perennial plants 4",
-    reviews:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 4",
-    about:
-      "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 4",
-    image: "/assets/images/plant.png",
-    quantity: 0,
-  },
-  {
-    name: "Cacto Plant 5",
-    price: "R$ 25.00",
-    details: "Cactus are succulent perennial plants 5",
-    reviews:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 5",
-    about:
-      "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 5",
-    image: "/assets/images/plant.png",
-    quantity: 0,
-  },
-];
-
-export const Catalogo = () => {
+export const Catalogo = ({ plants = [] }) => {
   const [current, setCurrent] = useState(0);
 
   const [showCatalog] = useLayoutContext();
@@ -107,4 +50,8 @@ export const Catalogo = () => {
       <PlantInfo plant={plants[current]} />
     </Styled.Container>
   );
+};
+
+Catalogo.propTypes = {
+  plants: P.array,
 };

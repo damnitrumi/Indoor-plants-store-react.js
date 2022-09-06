@@ -1,6 +1,7 @@
 import { ThemeProvider } from "styled-components"
 import {theme} from '../src/styles/theme'
 import {GlobalStyles} from '../src/styles/global-styles'
+import { LayoutContextProvider } from "../src/components/contexts/LayoutContext"
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -15,8 +16,10 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <ThemeProvider theme={theme}>
+      <LayoutContextProvider>
       <Story />
       <GlobalStyles />
+      </LayoutContextProvider>
     </ThemeProvider>
   )
 ]
