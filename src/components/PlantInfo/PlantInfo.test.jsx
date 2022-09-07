@@ -24,6 +24,18 @@ describe("<PlantInfo />", () => {
 
     const buttons = screen.getAllByRole("button");
 
+    userEvent.click(buttons[0]);
+
+    const details = screen.getByText("Cactus are succulent perennial plants 1");
+
+    expect(details).toBeInTheDocument();
+  });
+
+  it("should render the correct tab", () => {
+    renderTheme(<PlantInfo plant={plantsMock[0]} />);
+
+    const buttons = screen.getAllByRole("button");
+
     userEvent.click(buttons[1]);
 
     const reviews = screen.getByText(
@@ -33,7 +45,21 @@ describe("<PlantInfo />", () => {
     expect(reviews).toBeInTheDocument();
   });
 
-  it("should render", () => {
+  it("should render the correct tab", () => {
+    renderTheme(<PlantInfo plant={plantsMock[0]} />);
+
+    const buttons = screen.getAllByRole("button");
+
+    userEvent.click(buttons[2]);
+
+    const about = screen.getByText(
+      "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 1"
+    );
+
+    expect(about).toBeInTheDocument();
+  });
+
+  it("should match snapshot", () => {
     const { container } = renderTheme(<PlantInfo plant={plantsMock[0]} />);
 
     expect(container).toMatchSnapshot();

@@ -4,14 +4,16 @@ import { Loading } from "../../components/Loading";
 import { About } from "../../components/About";
 import { Cart } from "../../components/Cart";
 
+import plantsMock from "../../components/utils/plantsMock";
+
 export const Home = () => {
-  const [teste, setTeste] = useState([]);
+  const [plants, setPlants] = useState([]);
 
   useEffect(() => {
     const load = async () => {
       await new Promise((r) => {
         setTimeout(() => {
-          setTeste([1, 2, 3]);
+          setPlants(plantsMock);
           console.log("teste");
           r();
         }, 5000);
@@ -21,13 +23,13 @@ export const Home = () => {
     load();
   }, []);
 
-  if (teste && teste.length == 0) {
+  if (plants && plants.length == 0) {
     return <Loading />;
   }
 
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
-      <Catalogo />
+      <Catalogo plants={plants} />
       <About />
       <Cart />
     </div>

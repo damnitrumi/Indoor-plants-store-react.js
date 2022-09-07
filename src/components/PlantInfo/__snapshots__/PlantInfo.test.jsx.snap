@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PlantInfo /> should render 1`] = `
+exports[`<PlantInfo /> should match snapshot 1`] = `
 .c3 {
   font-family: 'Aclonica',sans-serif;
   color: #213e3a;
