@@ -9,7 +9,7 @@ import { PlantInfo } from "../PlantInfo";
 import { Dots } from "../Dots";
 import { useLayoutContext } from "../contexts/LayoutContext";
 
-export const Catalogo = ({ plants = [] }) => {
+export const Catalogo = ({ plants }) => {
   const [current, setCurrent] = useState(0);
 
   const [showCatalog] = useLayoutContext();
@@ -53,5 +53,5 @@ export const Catalogo = ({ plants = [] }) => {
 };
 
 Catalogo.propTypes = {
-  plants: P.array,
+  plants: P.array.isRequired,
 };
