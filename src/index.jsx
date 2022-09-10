@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
 import { ThemeProvider } from "styled-components";
 import { LayoutContextProvider } from "./components/contexts/LayoutContext";
+import { CartContextProvider } from "./components/contexts/CartContext";
 import { GlobalStyles } from "./styles/global-styles";
 import { theme } from "./styles/theme";
 import { Home } from "./templates/Home";
@@ -11,8 +13,10 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <LayoutContextProvider>
-        <Home />
-        <GlobalStyles />
+        <CartContextProvider>
+          <Home />
+          <GlobalStyles />
+        </CartContextProvider>
       </LayoutContextProvider>
     </ThemeProvider>
   </React.StrictMode>
