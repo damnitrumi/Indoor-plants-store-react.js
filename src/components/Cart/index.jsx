@@ -14,9 +14,11 @@ export const Cart = () => {
     <Styled.Container visible={showCart}>
       <SectionWrapper>
         <Menu dark />
-        {cartItens.map((el, i) => {
-          return <CartItem product={el} key={i} />;
-        })}
+        <Styled.ItensContainer>
+          {cartItens.map((el, i) => {
+            return <CartItem product={el} key={i} />;
+          })}
+        </Styled.ItensContainer>
       </SectionWrapper>
     </Styled.Container>
   );

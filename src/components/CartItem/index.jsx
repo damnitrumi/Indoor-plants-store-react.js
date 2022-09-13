@@ -7,19 +7,22 @@ import { Button } from "../Button";
 
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
+import { useCartContext } from "../contexts/CartContext";
 
 // import plantsMock from "../utils/plantsMock";
 
-export const CartItem = ({ product: { name, price, image, quantity } }) => {
+export const CartItem = ({ product }) => {
+  const [, , addQty] = useCartContext();
+
   return (
     <Styled.Container>
       <Styled.ProductImageContainer>
-        <ImageContainer urlImg={image} />
+        <ImageContainer urlImg={product.image} />
       </Styled.ProductImageContainer>
       <Styled.ProductData>
         <Styled.NameContainer>
-          <Heading>{name}</Heading>
-          <Heading>{price}</Heading>
+          <Heading>{product.name}</Heading>
+          <Heading>{product.price}</Heading>
         </Styled.NameContainer>
         <Styled.ProductOptionsContainer>
           <Styled.QuantityContainer>
@@ -27,8 +30,8 @@ export const CartItem = ({ product: { name, price, image, quantity } }) => {
               <Button onClick={() => console.log("deduct")}>
                 <AiOutlineMinus />
               </Button>
-              <span>{quantity}</span>
-              <Button onClick={() => console.log("add")}>
+              <span>{product.quantity}</span>
+              <Button onClick={() => addQty(product)}>
                 <AiOutlinePlus />
               </Button>
             </Styled.Quantity>
@@ -51,5 +54,6 @@ CartItem.propTypes = {
     about: P.string,
     image: P.string,
     quantity: P.number,
+    id: P.number,
   }).isRequired,
 };

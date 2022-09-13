@@ -59,5 +59,6 @@ PlantInfo.propTypes = {
     about: P.string,
     image: P.string,
     quantity: P.number,
+    id: P.number,
   }).isRequired,
 };

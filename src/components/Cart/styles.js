@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Container as SectionWrapper } from "../SectionWrapper/styles";
 
 export const Container = styled.div`
   ${({ visible }) => css`
@@ -12,5 +13,15 @@ export const Container = styled.div`
     css`
       transform: translateX(0);
     `}
+    ${SectionWrapper} {
+      display: flex;
+      flex-direction: column;
+    }
+  `}
+`;
+
+export const ItensContainer = styled.div`
+  ${() => css`
+    overflow-y: auto;
   `}
 `;

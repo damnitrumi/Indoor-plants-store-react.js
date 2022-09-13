@@ -8,7 +8,8 @@ export default [
     about:
       "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 1",
     image: "/assets/images/plant.png",
-    quantity: 0,
+    quantity: 1,
+    id: 1,
   },
   {
     name: "Cacto Plant 2",
@@ -19,7 +20,8 @@ export default [
     about:
       "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 2",
     image: "/assets/images/plant.png",
-    quantity: 0,
+    quantity: 1,
+    id: 2,
   },
   {
     name: "Cacto Plant 3",
@@ -30,7 +32,8 @@ export default [
     about:
       "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 3",
     image: "/assets/images/plant.png",
-    quantity: 0,
+    quantity: 1,
+    id: 3,
   },
   {
     name: "Cacto Plant 4",
@@ -41,7 +44,8 @@ export default [
     about:
       "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 4",
     image: "/assets/images/plant.png",
-    quantity: 0,
+    quantity: 1,
+    id: 4,
   },
   {
     name: "Cacto Plant 5",
@@ -52,6 +56,7 @@ export default [
     about:
       "Nulla eu massa facilisis, pulvinar nulla at, varius mauris. Fusce id fringilla dolor, ac auctor. 5",
     image: "/assets/images/plant.png",
-    quantity: 0,
+    quantity: 1,
+    id: 5,
   },
 ];
