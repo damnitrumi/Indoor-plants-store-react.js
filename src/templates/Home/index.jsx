@@ -5,6 +5,7 @@ import { About } from "../../components/About";
 import { Cart } from "../../components/Cart";
 
 import plantsMock from "../../components/utils/plantsMock";
+import { Toaster } from "react-hot-toast";
 
 export const Home = () => {
   const [plants, setPlants] = useState([]);
@@ -29,6 +30,7 @@ export const Home = () => {
 
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
+      <Toaster />
       <Catalogo plants={plants} />
       <About />
       <Cart />

@@ -1,5 +1,6 @@
 import * as Styled from "./styles";
 import P from "prop-types";
+import toast from "react-hot-toast";
 
 import { Heading } from "../Heading";
 import { Button } from "../Button";
@@ -7,6 +8,16 @@ import { Text } from "../Text";
 import { useState } from "react";
 
 import { useCartContext } from "../contexts/CartContext";
+import { theme } from "../../styles/theme";
+
+const notifyAddedProduct = () =>
+  toast("Product Added to Cart", {
+    style: {
+      fontSize: `${theme.font.sizes.small}`,
+      fontFamily: `${theme.font.family.secondary}`,
+    },
+    icon: "✅",
+  });
 
 export const PlantInfo = ({ plant }) => {
   const [tab, setTab] = useState(1);
@@ -40,8 +51,8 @@ export const PlantInfo = ({ plant }) => {
       </Styled.TabsWrapper>
       <Button
         onClick={() => {
-          console.log("added");
           addItemToCart(plant);
+          notifyAddedProduct();
         }}
       >
         Add To Cart

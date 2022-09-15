@@ -7,5 +7,6 @@ export const Container = styled.button`
     cursor: pointer;
     padding: ${theme.spacings.tiny};
     color: white;
+    position: relative;
   `}
 `;

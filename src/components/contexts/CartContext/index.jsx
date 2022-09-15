@@ -1,5 +1,4 @@
 import P from "prop-types";
-// import { useEffect } from "react";
 
 import { useContext } from "react";
 import { useState } from "react";
@@ -8,53 +7,80 @@ import { createContext } from "react";
 const Context = createContext();
 
 export const CartContextProvider = ({ children }) => {
-  const [cartItens, setCartItens] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
-  // useEffect(() => {
-  //   console.log("Depois do updated");
-  //   console.log(cartItens);
-  // }, [cartItens]);
-
-  const addQty = (plant) => {
-    addItemToCart(plant);
+  const incQty = (product) => {
+    addItemToCart(product);
   };
 
-  const deductQty = (plant) => {
-    plant.quantity -= 1;
-    console.log("Retirei pelo botão de retirar");
-  };
-
-  const addItemToCart = (product) => {
-    if (cartItens.find((el) => el.id == product.id)) {
+  const decQty = (product) => {
+    if (cartItems.find((el) => el.id == product.id)) {
       let updatedProduct = {
-        ...cartItens[
-          cartItens.indexOf(cartItens.find((el) => el.id == product.id))
+        ...cartItems[
+          cartItems.indexOf(cartItems.find((el) => el.id == product.id))
         ],
         quantity:
-          cartItens[
-            cartItens.indexOf(cartItens.find((el) => el.id == product.id))
-          ].quantity + 1,
+          cartItems[
+            cartItems.indexOf(cartItems.find((el) => el.id == product.id))
+          ].quantity - 1,
       };
 
-      let updatedCartItems = [...cartItens];
+      let updatedCartItems = [...cartItems];
 
       updatedCartItems.splice(
-        cartItens.indexOf(cartItens.find((el) => el.id == product.id)),
+        cartItems.indexOf(cartItems.find((el) => el.id == product.id)),
         1,
         updatedProduct
       );
 
       console.log(updatedCartItems);
 
-      setCartItens(updatedCartItems);
+      setCartItems(updatedCartItems);
+    }
+  };
+
+  const removeProduct = (product) => {
+    let updatedCartItems = [...cartItems];
+    updatedCartItems.splice(
+      cartItems.indexOf(cartItems.find((el) => el.id == product.id)),
+      1
+    );
+    setCartItems(updatedCartItems);
+  };
+
+  const addItemToCart = (product) => {
+    if (cartItems.find((el) => el.id == product.id)) {
+      let updatedProduct = {
+        ...cartItems[
+          cartItems.indexOf(cartItems.find((el) => el.id == product.id))
+        ],
+        quantity:
+          cartItems[
+            cartItems.indexOf(cartItems.find((el) => el.id == product.id))
+          ].quantity + 1,
+      };
+
+      let updatedCartItems = [...cartItems];
+
+      updatedCartItems.splice(
+        cartItems.indexOf(cartItems.find((el) => el.id == product.id)),
+        1,
+        updatedProduct
+      );
+
+      console.log(updatedCartItems);
+
+      setCartItems(updatedCartItems);
       return;
     }
 
-    setCartItens((s) => [...s, product]);
+    setCartItems((s) => [...s, product]);
   };
 
   return (
-    <Context.Provider value={[cartItens, addItemToCart, addQty, deductQty]}>
+    <Context.Provider
+      value={[cartItems, addItemToCart, incQty, decQty, removeProduct]}
+    >
       {children}
     </Context.Provider>
   );

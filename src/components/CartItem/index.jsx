@@ -8,11 +8,22 @@ import { Button } from "../Button";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
 import { useCartContext } from "../contexts/CartContext";
+import { theme } from "../../styles/theme";
+import toast from "react-hot-toast";
 
 // import plantsMock from "../utils/plantsMock";
 
+const notifyRemovedProduct = () =>
+  toast("Product Removed from Cart", {
+    style: {
+      fontSize: `${theme.font.sizes.small}`,
+      fontFamily: `${theme.font.family.secondary}`,
+    },
+    icon: "❌",
+  });
+
 export const CartItem = ({ product }) => {
-  const [, , addQty] = useCartContext();
+  const [, , incQty, decQty, removeProduct] = useCartContext();
 
   return (
     <Styled.Container>
@@ -27,15 +38,20 @@ export const CartItem = ({ product }) => {
         <Styled.ProductOptionsContainer>
           <Styled.QuantityContainer>
             <Styled.Quantity>
-              <Button onClick={() => console.log("deduct")}>
+              <Button onClick={() => decQty(product)}>
                 <AiOutlineMinus />
               </Button>
               <span>{product.quantity}</span>
-              <Button onClick={() => addQty(product)}>
+              <Button onClick={() => incQty(product)}>
                 <AiOutlinePlus />
               </Button>
             </Styled.Quantity>
-            <Button onClick={() => console.log("remove")}>
+            <Button
+              onClick={() => {
+                removeProduct(product);
+                notifyRemovedProduct();
+              }}
+            >
               <TiDeleteOutline style={{ color: "red", fontSize: 25 }} />
             </Button>
           </Styled.QuantityContainer>
