@@ -1,7 +1,7 @@
 export default [
   {
     name: "Cacto Plant 1",
-    price: "R$ 21.00",
+    price: "21.00",
     details: "Cactus are succulent perennial plants 1",
     reviews:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 1",
@@ -13,7 +13,7 @@ export default [
   },
   {
     name: "Cacto Plant 2",
-    price: "R$ 22.00",
+    price: "22.00",
     details: "Cactus are succulent perennial plants 2",
     reviews:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 2",
@@ -25,7 +25,7 @@ export default [
   },
   {
     name: "Cacto Plant 3",
-    price: "R$ 23.00",
+    price: "23.00",
     details: "Cactus are succulent perennial plants 3",
     reviews:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 3",
@@ -37,7 +37,7 @@ export default [
   },
   {
     name: "Cacto Plant 4",
-    price: "R$ 24.00",
+    price: "24.00",
     details: "Cactus are succulent perennial plants 4",
     reviews:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 4",
@@ -49,7 +49,7 @@ export default [
   },
   {
     name: "Cacto Plant 5",
-    price: "R$ 25.00",
+    price: "25.00",
     details: "Cactus are succulent perennial plants 5",
     reviews:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis aliquam elit. Vestibulum eget metus 5",

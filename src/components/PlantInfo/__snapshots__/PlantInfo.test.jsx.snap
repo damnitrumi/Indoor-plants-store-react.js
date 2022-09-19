@@ -15,6 +15,7 @@ exports[`<PlantInfo /> should match snapshot 1`] = `
   cursor: pointer;
   padding: 0.8rem;
   color: white;
+  position: relative;
 }
 
 .c12 {
@@ -171,7 +172,7 @@ exports[`<PlantInfo /> should match snapshot 1`] = `
       <h1
         class="c2 c3"
       >
-        R$ 21.00
+        R$:21.00
       </h1>
     </div>
     <div

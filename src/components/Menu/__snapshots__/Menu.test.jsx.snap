@@ -22,6 +22,7 @@ exports[`<Menu /> should match snapshot 1`] = `
   cursor: pointer;
   padding: 0.8rem;
   color: white;
+  position: relative;
 }
 
 <div>
@@ -39,7 +40,6 @@ exports[`<Menu /> should match snapshot 1`] = `
     <button
       class="c1"
     >
-       
       <img
         class=""
         src="/assets/images/short-logo-light.png"
@@ -48,7 +48,6 @@ exports[`<Menu /> should match snapshot 1`] = `
     <button
       class="c1"
     >
-       
       <img
         class=""
         src="/assets/images/cart-light.png"

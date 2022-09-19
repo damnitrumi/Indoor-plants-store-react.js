@@ -9,7 +9,7 @@ export const Container = styled.div`
     margin-top: ${theme.spacings.small};
     ${Heading} {
       margin-bottom: 0;
-      font-size: ${theme.font.sizes.medium};
+      font-size: 1.4rem;
       font-family: ${theme.font.family.secondary};
     }
     ${Button} {

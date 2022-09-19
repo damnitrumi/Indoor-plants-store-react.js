@@ -10,7 +10,7 @@ describe("<PlantInfo />", () => {
 
     const firstHeading = screen.getByRole("heading", { name: "Cacto Plant 1" });
     const secondHeading = screen.getByRole("heading", {
-      name: "R$ 21.00",
+      name: "R$:21.00",
     });
     const headings = screen.getAllByRole("heading");
 

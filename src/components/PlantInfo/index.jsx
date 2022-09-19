@@ -29,7 +29,7 @@ export const PlantInfo = ({ plant }) => {
     <Styled.Container>
       <Styled.NameContainer>
         <Heading>{plant.name}</Heading>
-        <Heading>{plant.price}</Heading>
+        <Heading>{`R$:${plant.price}`}</Heading>
       </Styled.NameContainer>
       <Styled.TabsWrapper>
         <Styled.TabsContainer>

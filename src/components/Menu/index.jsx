@@ -22,7 +22,7 @@ export const Menu = ({ dark = false }) => {
       </Button>
       <Button onClick={cartVisible}>
         {cartItems.length > 0 && (
-          <Styled.PopUp>{cartItems.length}</Styled.PopUp>
+          <Styled.PopUp aria-label="ItemsQty">{cartItems.length}</Styled.PopUp>
         )}
         <ImageContainer urlImg={`/assets/images/cart-${darkIcons}.png`} />
       </Button>

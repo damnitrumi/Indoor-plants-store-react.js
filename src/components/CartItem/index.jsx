@@ -33,7 +33,7 @@ export const CartItem = ({ product }) => {
       <Styled.ProductData>
         <Styled.NameContainer>
           <Heading>{product.name}</Heading>
-          <Heading>{product.price}</Heading>
+          <Heading>{`R$: ${product.price}`}</Heading>
         </Styled.NameContainer>
         <Styled.ProductOptionsContainer>
           <Styled.QuantityContainer>

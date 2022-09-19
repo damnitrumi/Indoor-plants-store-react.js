@@ -9,6 +9,8 @@ exports[`<Catalogo /> should render 1`] = `
 }
 
 .c0 {
+  position: relative;
+  z-index: 1;
   height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -161,6 +163,7 @@ exports[`<Catalogo /> should render 1`] = `
   cursor: pointer;
   padding: 0.8rem;
   color: white;
+  position: relative;
 }
 
 .c17 {
@@ -347,7 +350,6 @@ exports[`<Catalogo /> should render 1`] = `
         <button
           class="c4 c5"
         >
-           
           <img
             class=""
             src="/assets/images/short-logo-dark.png"
@@ -356,7 +358,6 @@ exports[`<Catalogo /> should render 1`] = `
         <button
           class="c4 c5"
         >
-           
           <img
             class=""
             src="/assets/images/cart-dark.png"
@@ -530,7 +531,7 @@ exports[`<Catalogo /> should render 1`] = `
         <h1
           class="c16 c17"
         >
-          R$ 21.00
+          R$:21.00
         </h1>
       </div>
       <div
