@@ -46,7 +46,3 @@ export const Cart = () => {
     </Styled.Container>
   );
 };
-
-// Cart.propTypes = {
-//   cartItens: P.array,
-// };

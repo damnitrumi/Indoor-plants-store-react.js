@@ -33,8 +33,6 @@ export const CartContextProvider = ({ children }) => {
         updatedProduct
       );
 
-      console.log(updatedCartItems);
-
       setCartItems(updatedCartItems);
     }
   };
@@ -67,8 +65,6 @@ export const CartContextProvider = ({ children }) => {
         1,
         updatedProduct
       );
-
-      console.log(updatedCartItems);
 
       setCartItems(updatedCartItems);
       return;

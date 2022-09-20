@@ -25,6 +25,8 @@ const notifyRemovedProduct = () =>
 export const CartItem = ({ product }) => {
   const [, , incQty, decQty, removeProduct] = useCartContext();
 
+  const disabled = product.quantity == 1 ? true : false;
+
   return (
     <Styled.Container>
       <Styled.ProductImageContainer>
@@ -38,10 +40,10 @@ export const CartItem = ({ product }) => {
         <Styled.ProductOptionsContainer>
           <Styled.QuantityContainer>
             <Styled.Quantity>
-              <Button onClick={() => decQty(product)}>
+              <Button disabled={disabled} onClick={() => decQty(product)}>
                 <AiOutlineMinus />
               </Button>
-              <span>{product.quantity}</span>
+              <span data-testid="quantity">{product.quantity}</span>
               <Button onClick={() => incQty(product)}>
                 <AiOutlinePlus />
               </Button>

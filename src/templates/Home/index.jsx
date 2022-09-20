@@ -15,7 +15,6 @@ export const Home = () => {
       await new Promise((r) => {
         setTimeout(() => {
           setPlants(plantsMock);
-          console.log("teste");
           r();
         }, 5000);
       });

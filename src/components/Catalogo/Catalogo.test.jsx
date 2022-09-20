@@ -3,6 +3,8 @@ import { renderTheme } from "../../styles/render-theme";
 import { Catalogo } from ".";
 
 import plantsMock from "../utils/plantsMock";
+import { Menu } from "../Menu";
+import userEvent from "@testing-library/user-event";
 
 describe("<Catalogo />", () => {
   it("should render Catalogo component", () => {
@@ -17,5 +19,23 @@ describe("<Catalogo />", () => {
     const { container } = renderTheme(<Catalogo plants={plantsMock} />);
 
     expect(container).toMatchSnapshot();
+  });
+
+  it("should call render with correct style", () => {
+    const { container } = renderTheme(
+      <>
+        <Menu />
+        <Catalogo plants={plantsMock} />
+      </>
+    );
+
+    const btns = screen.getAllByRole("button");
+    const cart = container.firstElementChild.nextElementSibling;
+
+    userEvent.click(btns[0]);
+
+    expect(cart).toHaveStyle("transform: translateX(0)");
+
+    // Aqui eu só fiz esse teste pra testar o style ao clicar no botão pra ele aparecer, basicamente pra coverage
   });
 });
