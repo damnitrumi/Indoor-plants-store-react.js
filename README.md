@@ -1,4 +1,13 @@
-Criação de um e-commerce mobile baseado no layout disponível em https://www.behance.net/gallery/142322031/App-Indoor-Plants-Store
+Criação de um conceito do que seria um e-commerce mobile baseado no layout disponível em https://www.behance.net/gallery/142322031/App-Indoor-Plants-Store
+Algumas páginas não existem no layout então eu criei algo simples apenas pra demonstração do que seria o app completo.
+Como disse acima é um modelo mobile, logo pra visualização, usar o inspecionar e ver no tamanho 360x800, não fiz a parte responsiva pois simplesmente recriei o layout do link acima.
+Funcionalidades:
+- Scroll de produtos (Cada slide corresponde a um produto apesar de usar a mesma imagem)
+- Informações do produto, assim como 3 abas com detalhes, avaliações e mais informações sobre o mesmo
+- Adicionar produto ao carrinho
+- Alterar a quantidade de cada produto no carrinho
+- Remover produto do carrinho
+Não consumi uma API para pegar as informações mas usei um setTimeout pra simular um requisição assíncrona.
 
 # Getting Started with Create React App
 
